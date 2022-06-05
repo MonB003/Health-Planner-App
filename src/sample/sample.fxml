@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu fx:id="menuFile" mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem fx:id="menuSave" disable="true" mnemonicParsing="false" onAction="#saveAll" text="Save" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuClose" mnemonicParsing="false" onAction="#handleCloseButtonAction" text="Exit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem fx:id="menuReset" mnemonicParsing="false" onAction="#resetAll" text="Reset" />
+          </items>
+        </Menu>
+        <Menu fx:id="menuHelp" mnemonicParsing="false" text="Guidance">
+          <items>
+                  <MenuItem mnemonicParsing="false" onAction="#recommendCalories" text="Calories Recommendations" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#recommendSleep" text="Sleep Recommendations" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#exerciseTypes" text="Types of Activities" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#exerciseTips" text="Exercise Tips" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#calculateBMR" text="BMR Calculator" />
+          </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="Plan">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#logFood" text="Food Log" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#shoppingList" text="Shopping List" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="About">
+              <items>
+            <MenuItem fx:id="menuAbtHealthPlan" mnemonicParsing="false" onAction="#healthPlanDescription" text="About Health Planner App" />
+              </items>
+            </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane fx:id="splitPane" dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane fx:id="anchorPaneLeft">
+          <children>
+            <Label fx:id="titleYourInfo" alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Your Info" textAlignment="CENTER" wrapText="false">
+              <font>
+                <Font size="18.0" fx:id="x1" />
+              </font>
+              <textFill>
+                <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
+              </textFill>
+            </Label>
+                  <VBox alignment="CENTER_LEFT" layoutX="11.0" layoutY="63.0" prefHeight="112.0" prefWidth="170.0" spacing="5.0">
+                     <children>
+                        <Label fx:id="lblName" text="Name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="textName" prefHeight="25.0" prefWidth="170.0" promptText="Name" />
+                        <Label fx:id="lblAge" text="Age">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="textAge" promptText="Age" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="btnAddInfo" layoutX="73.0" layoutY="199.0" mnemonicParsing="false" onAction="#addInfo" text="Add">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="lblNameWarning" layoutX="41.0" layoutY="259.0" textFill="#f20c0c" />
+                  <Label fx:id="lblAgeWarning" layoutX="36.0" layoutY="287.0" textFill="#e81111" />
+                  <Button fx:id="btnClose" disable="true" layoutX="19.0" layoutY="513.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" text="Close" visible="false" />
+          </children>
+        </AnchorPane>
+        <ScrollPane fx:id="scrollPane" prefHeight="-1.0" prefWidth="-1.0">
+          <content>
+            <AnchorPane id="Content" fx:id="anchorPaneMiddle" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+              <children>
+                <Label fx:id="titleHealthPlan" alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Health Plan" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                        <VBox layoutX="14.0" layoutY="63.0" prefHeight="196.0" prefWidth="155.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="lblMealLog" text="Calories Log" textFill="#dd5b2f">
+                                 <font>
+                                    <Font name="Footlight MT Light" size="20.0" />
+                                 </font>
+                              </Label>
+                              <VBox prefHeight="115.0" prefWidth="172.0" spacing="5.0">
+                                 <children>
+                                    <Label fx:id="lblCaloriesNum" text="Number of Calories">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="textNumOfCalories" disable="true" promptText="Number of Calories" />
+                                    <Label fx:id="lblCalorieGoal" text="Next Goal">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="textCalorieGoal" disable="true" promptText="Number of Calories" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <Button fx:id="btnAddCalories" disable="true" layoutX="215.0" layoutY="146.0" mnemonicParsing="false" onAction="#addCalories" text="Add">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <VBox layoutX="14.0" layoutY="258.0" prefHeight="198.0" prefWidth="155.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="lblExerciseLog" text="Exercise Log" textFill="#1ab94f">
+                                 <font>
+                                    <Font name="Footlight MT Light" size="20.0" />
+                                 </font>
+                              </Label>
+                              <VBox prefHeight="149.0" prefWidth="155.0" spacing="5.0">
+                                 <children>
+                                    <Label fx:id="lblActivity" text="Type of Activity">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="textActivity" disable="true" promptText="Activity" />
+                                    <Label fx:id="lblExerciseHours" text="Number of Hours">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="textExerciseHours" disable="true" promptText="Number of Hours" />
+                                    <Label fx:id="lblExerciseGoal" text="Next Goal">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="textExerciseGoal" disable="true" promptText="Number of Hours" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="14.0" layoutY="498.0" prefHeight="161.0" prefWidth="155.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="lblSleepLog" prefWidth="77.0" text="Sleep Log" textFill="#8531c9">
+                                 <font>
+                                    <Font name="Footlight MT Light" size="20.0" />
+                                 </font>
+                              </Label>
+                              <VBox prefHeight="75.0" prefWidth="159.0" spacing="5.0">
+                                 <children>
+                                    <Label fx:id="lblSleepHours" text="Number of Hours Slept">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="textSleepHours" disable="true" promptText="Number of Hours" />
+                                    <Label fx:id="lblSleepGoal" text="Next Goal">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <TextField fx:id="textSleepGoal" disable="true" promptText="Number of Hours" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="btnAddExercise" disable="true" layoutX="215.0" layoutY="366.0" mnemonicParsing="false" onAction="#addExercise" text="Add">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnAddSleep" disable="true" layoutX="215.0" layoutY="570.0" mnemonicParsing="false" onAction="#addSleep" prefHeight="30.0" prefWidth="46.0" text="Add">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="lblAboutApp" layoutX="108.0" layoutY="41.0" text="What is the Health Planner App?" visible="false">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblAboutApp2" layoutX="10.0" layoutY="63.0" prefHeight="20.0" prefWidth="410.0" text="The Health Planner App is an app made to help you keep" visible="false">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblAboutApp3" layoutX="10.0" layoutY="88.0" prefHeight="20.0" prefWidth="411.0" text="track of the different categories of your health. This app" visible="false">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblAboutApp4" layoutX="10.0" layoutY="114.0" prefHeight="21.0" prefWidth="411.0" text="allows you to fill in your information and save it on a file so" visible="false">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblAboutApp5" layoutX="9.0" layoutY="141.0" prefHeight="20.0" prefWidth="412.0" text="you can keep track of your health. It is also a great way to" visible="false">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblAboutApp6" layoutX="11.0" layoutY="166.0" prefHeight="21.0" prefWidth="407.0" text="help you plan and stay organized!" visible="false">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblCaloriesWarning" layoutX="281.0" layoutY="154.0" textFill="#e40b0b" />
+                        <Label fx:id="lblActivityWarning" layoutX="291.0" layoutY="340.0" textFill="#d71414" />
+                        <Label fx:id="lblExerciseWarning" layoutX="284.0" layoutY="424.0" textFill="#da1111" />
+                        <Label fx:id="lblSleepWarning" layoutX="284.0" layoutY="571.0" prefHeight="30.0" prefWidth="121.0" textFill="#d31414" />
+                        <ProgressBar fx:id="progressBar" layoutX="303.0" layoutY="32.0" prefHeight="18.0" prefWidth="117.0" progress="0.0" />
+                        <Label fx:id="lblProgress" layoutX="337.0" layoutY="14.0" text="Progress:" />
+              </children>
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+        <AnchorPane fx:id="anchorPaneRight">
+          <children>
+            <Label fx:id="titleDetails" alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                  <Label fx:id="lblDescription" layoutX="14.0" layoutY="63.0" text="Fill in your personal">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDescription2" layoutX="13.0" layoutY="82.0" text="info to start the">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDescription3" layoutX="14.0" layoutY="101.0" text="health planner!">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+            <Label text=" Made By: Monica Bacatan">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
