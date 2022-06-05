@@ -98,7 +98,7 @@ Using JavaFX in the project:
 - [BMR calculation](https://www.verywellfit.com/what-is-bmr-or-basal-metabolic-rate-3495380)
 - [Weight loss tips](https://www.healthline.com/nutrition/losing-a-pound-a-day#weight-loss-tips)
 
-### JavaFX
+### JavaFX:
 - [Create new window in JavaFX](https://www.quickprogrammingtips.com/java/how-to-open-a-new-window-in-javafx.html)
 - [ChoiceBox dropdown menu](https://jenkov.com/tutorials/javafx/choicebox.html)
 - [Button event listener](https://www.geeksforgeeks.org/javafx-button-with-examples/)
