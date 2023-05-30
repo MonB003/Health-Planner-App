@@ -1,5 +1,5 @@
 /* Capstone Project Health class
-By: Monica Bacatan
+By: Monica 
  */
 
 package sample;

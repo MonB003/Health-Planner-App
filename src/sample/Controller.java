@@ -1,5 +1,5 @@
 /* Capstone Project Controller class
-By: Monica Bacatan
+By: Monica 
  */
 
 package sample;

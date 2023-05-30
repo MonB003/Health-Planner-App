@@ -264,7 +264,7 @@
     </SplitPane>
     <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
       <children>
-            <Label text=" Made By: Monica Bacatan">
+            <Label text=" Made By: Monica ">
                <font>
                   <Font size="10.0" />
                </font>

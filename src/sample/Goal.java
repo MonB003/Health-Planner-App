@@ -1,5 +1,5 @@
 /* Capstone Project Goal class
-By: Monica Bacatan
+By: Monica 
  */
 
 package sample;

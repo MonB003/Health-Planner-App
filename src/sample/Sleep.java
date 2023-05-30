@@ -1,5 +1,5 @@
 /* Capstone Project Sleep class
-By: Monica Bacatan
+By: Monica 
  */
 
 package sample;

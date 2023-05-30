@@ -1,5 +1,5 @@
 /* Capstone Project Calories class
-By: Monica Bacatan
+By: Monica 
  */
 
 package sample;
